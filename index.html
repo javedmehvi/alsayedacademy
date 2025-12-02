@@ -1,286 +1,168 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Online Quran Learning Academy</title>
-<meta name="description" content="Online Quran Learning Academy - Courses, Video Tutorials, 3 days free trial" />
-<style>
-  :root{
-    --bg:#0f1720; --card:#0b1220; --accent:#0b6623; --muted:#9aa3aa; --text:#e8eef1;
-    --glass: rgba(255,255,255,0.03);
-    --radius:14px;
-    font-family: Inter, system-ui, Arial, sans-serif;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:linear-gradient(180deg,#071017 0%, #07121a 100%);color:var(--text);-webkit-font-smoothing:antialiased;}
-  .container{max-width:980px;margin:22px auto;padding:18px;}
-  header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px;background:var(--card);border-radius:12px;}
-  .brand{display:flex;gap:12px;align-items:center}
-  .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0aa073);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:18px}
-  h1{margin:0;font-size:18px}
-  .contact{font-size:13px;color:var(--muted);text-align:right}
-  a.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-  .hero{margin:18px 0;padding:18px;background:var(--glass);border-radius:12px}
-  .hero h2{margin:0 0 8px 0}
-  .features{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-  .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
-  .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-  .card h3{margin:0 0 6px 0;font-size:16px}
-  .fee{font-weight:700;color:var(--accent)}
-  .tags{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-  .small{font-size:13px;color:var(--muted)}
-  .video{margin-top:10px;border-radius:8px;overflow:hidden}
-  iframe{width:100%;height:160px;border:0;display:block}
-  .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 10px;border-radius:10px;text-decoration:none}
-  .trial{background:#ffdf7a;color:#111;padding:6px 10px;border-radius:999px;font-weight:700}
-  footer{margin-top:22px;padding:18px;border-radius:12px;background:var(--card);text-align:center;font-size:13px;color:var(--muted)}
-  form.join{margin-top:14px;background:rgba(0,0,0,0.12);padding:12px;border-radius:10px}
-  label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-  input, select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
-  .row{display:flex;gap:8px}
-  .row > *{flex:1}
-  @media (max-width:520px){
-    iframe{height:120px}
-    .logo{width:48px;height:48px;font-size:16px}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Quran Learning Academy</title>
+  <meta name="description" content="Online Quran Learning Academy - Courses, fees, video tutorials, Google Meet classes. 3 days free trial." />
+  <style>
+    :root{
+      --bg:#0f1720; --card:#0b1220; --muted:#9aa4b2; --accent:#0bb66a; --yellow:#f6c84b; --glass: rgba(255,255,255,0.03);
+      --radius:14px; font-family: Inter, system-ui, sans-serif;
+    }
+    html,body{height:100%; margin:0; background:var(--bg); color:#e6eef6}
+    .wrap{max-width:940px;margin:0 auto;padding:18px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{background:var(--accent);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#022; font-size:18px}
+    h1{margin:0;font-size:18px}
+    .contact{font-size:14px;color:var(--muted);display:flex;gap:12px;align-items:center}
+    .hero{background:var(--card);border-radius:var(--radius);padding:18px;margin:16px 0}
+    .badges{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+    .badge{background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+    .trial{background:var(--yellow);color:#09202a;padding:6px 10px;border-radius:999px;font-weight:700}
+    .lead{font-size:20px;margin:6px 0 12px}
+    .small{color:var(--muted);font-size:14px}
+    .card-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:14px;margin-top:14px}
+    @media(min-width:720px){ .card-grid{grid-template-columns:repeat(2,1fr)} .lead{font-size:22px} }
+    .course{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:14px;border-radius:12px}
+    .course h3{margin:0 0 6px}
+    .price{color:#1bd06a;font-weight:800;margin:6px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:var(--glass);padding:6px 8px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .join{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#04211a;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn.out{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .video-card{background:var(--card);padding:12px;border-radius:12px;margin-top:16px}
+    iframe{width:100%;height:220px;border-radius:10px;border:0}
+    footer{margin:28px 0;text-align:center;color:var(--muted);font-size:13px}
+    .toprow{display:flex;gap:12px;align-items:center}
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
       <div class="brand">
         <div class="logo">OQ</div>
         <div>
           <h1>Online Quran Learning Academy</h1>
-          <div class="small" style="color:var(--muted)">Live video classes • Tajweed • Hifz • Certificates</div>
+          <div class="small">Live video classes • Tajweed • Hifz • Certificates</div>
         </div>
       </div>
       <div class="contact">
-        <div><a href="tel:+923038515883" style="color:var(--text);text-decoration:none">📞 +92 303 8515883</a></div>
-        <div><a href="mailto:javedmehvi@gmail.com" style="color:var(--muted);text-decoration:none">✉️ javedmehvi@gmail.com</a></div>
+        <div>📞 <a href="tel:+923038515883" style="color:inherit;text-decoration:none">+92 303 8515883</a></div>
+        <div>✉️ <a href="mailto:javedmehvi@gmail.com" style="color:inherit;text-decoration:none">javedmehvi@gmail.com</a></div>
       </div>
     </header>
 
-    <div class="hero">
-      <h2>Start learning Quran online — 1-on-1 & group classes</h2>
-      <div class="features">
-        <div class="chip trial">3 DAYS FREE TRIAL</div>
-        <div class="chip">Google Meet classes</div>
-        <div class="chip">Video tutorials included</div>
-        <div class="chip">Certificate on completion</div>
+    <section class="hero">
+      <div class="badges">
+        <div class="trial">3 DAYS FREE TRIAL</div>
+        <div class="badge">Google Meet classes</div>
+        <div class="badge">Video tutorials included</div>
+        <div class="badge">Certificate on completion</div>
       </div>
 
-      <div style="margin-top:12px" class="small">
-        Join now and start your Quran journey. Choose a course below, click <strong>Direct Join</strong> — we will open Google Meet & email enrollment details to you.
-      </div>
-    </div>
+      <div class="lead">Start learning Quran online — 1-on-1 & group classes</div>
+      <div class="small">Join now and start your Quran journey. Choose a course below, click <strong>Direct Join</strong> — we'll open Google Meet & email enrollment details to you.</div>
+    </section>
 
-    <!-- Courses -->
     <section>
-      <h2 style="margin:6px 0 10px 0">Our Courses</h2>
-      <div class="courses">
-        <!-- Course Card Template -->
-        <div class="card">
+      <h2 style="margin-top:18px">Our Courses</h2>
+
+      <div class="card-grid">
+        <article class="course">
           <h3>Basic Quran Reading</h3>
           <div class="small">Learn Arabic letters, correct pronunciation and reading of the Quran.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 3,500 / month</span></div>
-          <div class="tags">
-            <div class="chip">Beginner</div>
-            <div class="chip">Video tutorials</div>
+          <div class="price">PKR 3,500 / month</div>
+          <div class="tags"><div class="tag">Beginner</div><div class="tag">Video tutorials</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Basic Quran Reading')">Direct Join</button>
+            <a class="btn out" href="#video">Watch sample</a>
           </div>
-          <div class="video">
-            <!-- placeholder video (replace with actual tutorial links later) -->
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Basic Quran Reading" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Basic Quran Reading')">Syllabus</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Tajweed Essentials</h3>
-          <div class="small">Master tajweed rules for beautiful, correct recitation.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 4,200 / month</span></div>
-          <div class="tags">
-            <div class="chip">Intermediate</div>
-            <div class="chip">Live classes</div>
+        <article class="course">
+          <h3>Tajweed Fundamentals</h3>
+          <div class="small">Rules of tajweed to recite correctly and beautifully.</div>
+          <div class="price">PKR 4,500 / month</div>
+          <div class="tags"><div class="tag">Intermediate</div><div class="tag">Live classes</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Tajweed Fundamentals')">Direct Join</button>
+            <button class="btn out" onclick="openSyllabus('Tajweed Fundamentals')">Syllabus</button>
           </div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Tajweed Essentials" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Tajweed Essentials')">Syllabus</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="course">
           <h3>Hifz Program</h3>
-          <div class="small">Structured memorization plan with revision & teacher review.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 5,500 / month</span></div>
-          <div class="tags">
-            <div class="chip">Advanced</div>
-            <div class="chip">1-on-1 sessions</div>
+          <div class="small">Memorize the Quran with expert teachers and revision schedule.</div>
+          <div class="price">PKR 6,500 / month</div>
+          <div class="tags"><div class="tag">Hifz</div><div class="tag">Certificate</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Hifz Program')">Direct Join</button>
+            <button class="btn out" onclick="openSyllabus('Hifz Program')">Syllabus</button>
           </div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Hifz Program" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Hifz Program')">Syllabus</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Quran Recitation Advanced</h3>
-          <div class="small">Improve fluency & style; advanced tajweed applications.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 4,800 / month</span></div>
-          <div class="tags">
-            <div class="chip">Advanced</div>
-            <div class="chip">Feedback</div>
+        <article class="course">
+          <h3>Noorani Qaida</h3>
+          <div class="small">Perfect for children and beginners to start Quran reading.</div>
+          <div class="price">PKR 2,500 / month</div>
+          <div class="tags"><div class="tag">Kids</div><div class="tag">Beginner</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Noorani Qaida')">Direct Join</button>
+            <button class="btn out" onclick="openSyllabus('Noorani Qaida')">Syllabus</button>
           </div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Quran Recitation Advanced" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Quran Recitation Advanced')">Syllabus</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Arabic for Quran</h3>
-          <div class="small">Learn basic Arabic to understand Quranic meanings & context.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 3,900 / month</span></div>
-          <div class="tags">
-            <div class="chip">Beginner</div>
-            <div class="chip">Language</div>
+        <article class="course">
+          <h3>Tafsir (Quran Explanation)</h3>
+          <div class="small">Understand meanings and context of Quranic verses.</div>
+          <div class="price">PKR 4,000 / month</div>
+          <div class="tags"><div class="tag">Advanced</div><div class="tag">Certificate</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Tafsir')">Direct Join</button>
+            <button class="btn out" onclick="openSyllabus('Tafsir')">Syllabus</button>
           </div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Arabic for Quran" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Arabic for Quran')">Syllabus</a>
-          </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Tafsir / Tafseer Intro</h3>
-          <div class="small">Short lessons on surah meanings & practical lessons.</div>
-          <div style="margin-top:8px"><span class="fee">PKR 2,900 / month</span></div>
-          <div class="tags">
-            <div class="chip">All levels</div>
-            <div class="chip">Weekly</div>
+        <article class="course">
+          <h3>Advanced Tajweed</h3>
+          <div class="small">For those who want professional-level recitation and tajweed.</div>
+          <div class="price">PKR 5,500 / month</div>
+          <div class="tags"><div class="tag">Advanced</div><div class="tag">1-on-1</div></div>
+          <div class="join">
+            <button class="btn" onclick="directJoin('Advanced Tajweed')">Direct Join</button>
+            <button class="btn out" onclick="openSyllabus('Advanced Tajweed')">Syllabus</button>
           </div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video tutorial" allowfullscreen></iframe>
-          </div>
-          <div class="actions">
-            <a href="#" class="btn" data-course="Tafsir / Tafseer Intro" onclick="directJoin(event)">Direct Join</a>
-            <a href="#" class="btn-ghost" onclick="viewSyllabus('Tafsir / Tafseer Intro')">Syllabus</a>
-          </div>
-        </div>
-
+        </article>
       </div>
     </section>
 
-    <!-- Join form / quick contact -->
-    <section style="margin-top:18px">
-      <h2 style="margin:6px 0">Quick Enrollment / Contact</h2>
-
-      <form class="join" id="joinForm" onsubmit="handleForm(event)">
-        <label for="name">Full name</label>
-        <input id="name" required placeholder="Your name" />
-
-        <div style="margin-top:8px" class="row">
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" value="+923038515883" required />
-          </div>
-          <div>
-            <label for="course">Choose course</label>
-            <select id="course">
-              <option>Basic Quran Reading</option>
-              <option>Tajweed Essentials</option>
-              <option>Hifz Program</option>
-              <option>Quran Recitation Advanced</option>
-              <option>Arabic for Quran</option>
-              <option>Tafsir / Tafseer Intro</option>
-            </select>
-          </div>
-        </div>
-
-        <label for="note" style="margin-top:8px">Message (optional)</label>
-        <textarea id="note" rows="3" placeholder="Any note..."></textarea>
-
-        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-          <button type="submit" class="btn">Request Join (Email + Meet)</button>
-          <a class="btn-ghost" href="https://meet.google.com" target="_blank">Open Google Meet</a>
-        </div>
-
-        <div style="margin-top:8px;font-size:13px;color:var(--muted)">
-          By clicking <strong>Request Join</strong> we will open your mail app with enrollment details and open Google Meet for the class link. You get <strong>3 days free trial</strong>.
-        </div>
-      </form>
+    <section id="video" class="video-card">
+      <h3 style="margin:6px 0">Video Tutorial (Sample)</h3>
+      <!-- ===== REPLACE the VIDEO_ID_HERE with your YouTube video ID ===== -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Video Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div style="margin-top:10px;color:var(--muted)">Tip: replace <code>VIDEO_ID_HERE</code> with your YouTube ID (the part after <em>v=</em> in the YouTube URL).</div>
     </section>
 
     <footer>
-      © Online Quran Learning Academy • Contact: <a href="mailto:javedmehvi@gmail.com" style="color:inherit">javedmehvi@gmail.com</a> • Phone: <a href="tel:+923038515883" style="color:inherit">+92 303 8515883</a>
+      <div style="margin-bottom:8px">Questions? Call <a href="tel:+923038515883" style="color:inherit">+92 303 8515883</a> or email <a href="mailto:javedmehvi@gmail.com" style="color:inherit">javedmehvi@gmail.com</a></div>
+      <div style="color:var(--muted)">© Online Quran Learning Academy</div>
     </footer>
   </div>
 
-<script>
-  // Open mailto and open Meet link
-  function directJoin(e){
-    e.preventDefault();
-    const course = e.currentTarget.getAttribute('data-course') || 'General';
-    const name = '';
-    const phone = '+923038515883';
-    sendEmailAndMeet({name, phone, course, note:''});
-  }
+  <script>
+    function directJoin(course){
+      const to = 'javedmehvi@gmail.com';
+      const subject = encodeURIComponent('Direct Join - ' + course + ' (Online Quran Learning Academy)');
+      const body = encodeURIComponent('Course: ' + course + '\\nName: \\nPhone: \\nPreferred time (days/time): \\nPlease schedule Google Meet and send join details.\\n\\nContact number: +92 303 8515883');
+      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    }
 
-  function viewSyllabus(course){
-    alert('Syllabus for: ' + course + '\\n\\nYou can edit syllabus pages later or replace video links in code.');
-  }
-
-  function handleForm(ev){
-    ev.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim() || '+923038515883';
-    const course = document.getElementById('course').value;
-    const note = document.getElementById('note').value.trim();
-    sendEmailAndMeet({name, phone, course, note});
-  }
-
-  function sendEmailAndMeet({name, phone, course, note}){
-    // compose mailto
-    const to = 'javedmehvi@gmail.com';
-    const subject = encodeURIComponent('Enrollment request: ' + course);
-    const bodyLines = [
-      'Name: ' + (name || '(not provided)'),
-      'Phone: ' + phone,
-      'Course: ' + course,
-      'Note: ' + (note || '(none)'),
-      '',
-      'I would like to start the 3 days free trial. Please send Google Meet link or schedule the first session.'
-    ];
-    const body = encodeURIComponent(bodyLines.join('\\n'));
-    const mailto = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
-
-    // open mail client
-    window.open(mailto, '_blank');
-
-    // open Google Meet (user can create/join)
-    window.open('https://meet.google.com', '_blank');
-
-    // small friendly notification
-    alert('Email composer opened and Google Meet opened in new tab. Please send the mail to confirm enrollment.');
-  }
-</script>
+    function openSyllabus(course){
+      alert('Syllabus for \"' + course + '\" can be added later. For now click Direct Join to enroll.');
+    }
+  </script>
 </body>
 </html>
